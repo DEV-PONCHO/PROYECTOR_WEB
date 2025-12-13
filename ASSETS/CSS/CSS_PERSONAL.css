@@ -1,0 +1,16 @@
+/* estilos.css */
+
+.product-img-wrapper {
+    height: 200px;                /* altura del cuadro */
+    overflow: hidden;              /* corta lo que se salga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;   /* placeholder mientras carga la imagen */
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            /* ajusta y recorta la imagen para llenar el cuadro */
+}
