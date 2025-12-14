@@ -25,46 +25,81 @@
 
 <!-- PRODUCTOS -->
 
-<section class="bg-light">
+  <!-- PRODUCTO #1 -->
+  <section class="bg-light">
   <div class="container pb-5">
     <div class="row">
 
-      <!-- COLUMNA IZQUIERDA -->
+      <!-- IMÁGENES -->
       <div class="col-lg-5 mt-5">
+
+        <!-- Imagen principal -->
         <div class="card mb-3">
-          <img class="card-img img-fluid" src="ASSETS/PICTURES/IMG_7.jpg" alt="Paquete premium">
+          <img id="mainProductImage"
+               class="card-img-top img-fluid"
+               src="ASSETS/PICTURES/IMG_2.jfif"
+               alt="Paquete Starter Digital">
         </div>
 
-        <div class="row">
-          <div class="col-1 align-self-center">
-            <a href="#multi-item-example" role="button" data-bs-slide="prev">
-              <i class="text-dark fas fa-chevron-left"></i>
-              <span class="sr-only">Anterior</span>
-            </a>
+        <!-- Thumbnails -->
+        <div class="row g-2">
+          <div class="col-4">
+            <img class="img-fluid border thumbnail"
+                 src="ASSETS/PICTURES/IMG_2.jfif"
+                 alt="Vista 1">
           </div>
-
-          <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
-            <!-- carousel content -->
+          <div class="col-4">
+            <img class="img-fluid border thumbnail"
+                 src="ASSETS/PICTURES/IMG_4.jfif"
+                 alt="Vista 2">
+          </div>
+          <div class="col-4">
+            <img class="img-fluid border thumbnail"
+                 src="ASSETS/PICTURES/IMG_3.jpg"
+                 alt="Vista 3">
           </div>
         </div>
+
       </div>
 
-      <!-- COLUMNA DERECHA -->
+      <!-- INFO DEL PRODUCTO -->
       <div class="col-lg-7 mt-5">
         <div class="card">
           <div class="card-body">
-            <h1 class="h2">Estrategia Creativa Premium</h1>
-            <p class="h3 py-2">
-              1.899 USD/mes
-              <i class="fa fa-star text-warning"></i>
+
+            <h1 class="h2">Paquete Starter Digital</h1>
+            <p class="h3 py-2">$599 / mes</p>
+
+            <p class="py-2">
               <i class="fa fa-star text-warning"></i>
               <i class="fa fa-star text-warning"></i>
               <i class="fa fa-star text-warning"></i>
               <i class="fa fa-star text-secondary"></i>
-              <span class="list-inline-item text-dark">
-                Rating 4.8 | 40 comentarios
-              </span>
+              <i class="fa fa-star text-secondary"></i>
+              <span class="text-dark ms-2">Rating 3.8 | 18 reseñas</span>
             </p>
+
+            <h6>Descripción:</h6>
+            <p>
+              Paquete ideal para pequeños negocios que desean iniciar su presencia
+              digital con estrategias básicas de marketing.
+            </p>
+
+            <h6>Incluye:</h6>
+            <ul class="list-unstyled pb-3">
+              <li>✔ Gestión básica de redes sociales</li>
+              <li>✔ Diseño gráfico inicial</li>
+              <li>✔ Soporte por correo</li>
+            </ul>
+
+            <div class="row pb-3">
+              <div class="col d-grid">
+                <button class="btn btn-success btn-lg">
+                  Contratar servicio
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -72,6 +107,8 @@
     </div>
   </div>
 </section>
+<!-- FIN PRODUCTO #1 -->
+
 
 <!-- FIN PRODUCTOS -->
 
@@ -83,6 +120,7 @@
 
   
   <!-- ARCHIVOS JS -->
+    <script src="ASSETS/JS/product.js"></script>
     <script src="ASSETS/JS/layout.js"></script>
     <script src="ASSETS/js/bootstrap.bundle.min.js"></script>
     <script src="ASSETS/js/jquery-migrate-1.2.1.min.js"></script>

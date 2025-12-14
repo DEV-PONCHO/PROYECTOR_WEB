@@ -14,3 +14,13 @@
     height: 100%;
     object-fit: cover;            /* ajusta y recorta la imagen para llenar el cuadro */
 }
+
+
+.thumbnail {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
