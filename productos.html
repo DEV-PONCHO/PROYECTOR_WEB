@@ -25,89 +25,46 @@
 
 <!-- PRODUCTOS -->
 
-  <!-- PRODUCTO #1 -->
-  <section class="bg-light">
-  <div class="container pb-5">
+<div class="container py-5">
+
     <div class="row">
-
-      <!-- IMÁGENES -->
-      <div class="col-lg-5 mt-5">
-
-        <!-- Imagen principal -->
-        <div class="card mb-3">
-          <img id="mainProductImage"
-               class="card-img-top img-fluid"
-               src="ASSETS/PICTURES/IMG_2.jfif"
-               alt="Paquete Starter Digital">
+        <!-- Imagen -->
+        <div class="col-md-6 text-center">
+            <img id="product-image" src="" alt="Producto"
+                 class="img-fluid border rounded">
         </div>
 
-        <!-- Thumbnails -->
-        <div class="row g-2">
-          <div class="col-4">
-            <img class="img-fluid border thumbnail"
-                 src="ASSETS/PICTURES/IMG_2.jfif"
-                 alt="Vista 1">
-          </div>
-          <div class="col-4">
-            <img class="img-fluid border thumbnail"
-                 src="ASSETS/PICTURES/IMG_4.jfif"
-                 alt="Vista 2">
-          </div>
-          <div class="col-4">
-            <img class="img-fluid border thumbnail"
-                 src="ASSETS/PICTURES/IMG_3.jpg"
-                 alt="Vista 3">
-          </div>
-        </div>
+        <!-- Información -->
+        <div class="col-md-6">
+            <h1 id="product-title" class="mb-3"></h1>
 
-      </div>
+            <p id="product-description" class="text-muted"></p>
 
-      <!-- INFO DEL PRODUCTO -->
-      <div class="col-lg-7 mt-5">
-        <div class="card">
-          <div class="card-body">
+            <h3 id="product-price" class="text-success fw-bold my-3"></h3>
 
-            <h1 class="h2">Paquete Starter Digital</h1>
-            <p class="h3 py-2">$599 / mes</p>
-
-            <p class="py-2">
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-warning"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <span class="text-dark ms-2">Rating 3.8 | 18 reseñas</span>
-            </p>
-
-            <h6>Descripción:</h6>
-            <p>
-              Paquete ideal para pequeños negocios que desean iniciar su presencia
-              digital con estrategias básicas de marketing.
-            </p>
-
-            <h6>Incluye:</h6>
-            <ul class="list-unstyled pb-3">
-              <li>✔ Gestión básica de redes sociales</li>
-              <li>✔ Diseño gráfico inicial</li>
-              <li>✔ Soporte por correo</li>
-            </ul>
-
-            <div class="row pb-3">
-              <div class="col d-grid">
-                <button class="btn btn-success btn-lg">
-                  Contratar servicio
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-success">
+                    <i class="far fa-heart"></i> Favoritos
                 </button>
-              </div>
+
+                <button class="btn btn-success">
+                    <i class="fas fa-cart-plus"></i> Agregar al carrito
+                </button>
             </div>
-
-          </div>
         </div>
-      </div>
-
     </div>
-  </div>
-</section>
-<!-- FIN PRODUCTO #1 -->
+
+    <!-- Detalles extra -->
+    <div class="row mt-5">
+        <div class="col">
+            <h4>¿Qué incluye?</h4>
+            <ul id="product-features">
+                <!-- JS insertará aquí -->
+            </ul>
+        </div>
+    </div>
+
+</div>
 
 
 <!-- FIN PRODUCTOS -->
