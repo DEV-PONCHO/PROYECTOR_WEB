@@ -1,229 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAdd-Compras</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAdd-Compras</title>
 
-    <!-- Bootstrap desde CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- FontAwesome desde CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-    <!-- Tus estilos locales -->
-    <link rel="stylesheet" href="ASSETS/css/templatemo.css">
-    <link rel="stylesheet" href="ASSETS/css/custom.css">
-    <link rel="stylesheet" href="ASSETS/CSS/CSS_PERSONAL.css">
-
-
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="ASSETS/css/templatemo.css">
+  <link rel="stylesheet" href="ASSETS/css/custom.css">
+  <link rel="stylesheet" href="ASSETS/CSS/CSS_PERSONAL.css">
 </head>
 <body>
-    <!-- INICIO ENCABEZADO -->
-      <div id="header"></div>
-    <!-- FIN ENCABEZADO -->
 
-
-<!-- INICIO COMPRAS -->
+<div id="header"></div>
 
 <div class="container py-5">
-    <div class="row">
-        <!-- Columna de categorías -->
-        <div class="col-lg-3">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h1 class="h2">Categorías</h1>
+  <div class="row">
+    <!-- Categorías -->
+    <div class="col-lg-3">
+      <h2>Categorías</h2>
+      <ul class="list-unstyled" id="category-filter">
+        <li><a href="#" data-filter="all">Todos</a></li>
+        <li><a href="#" data-filter="digital">Digital</a></li>
+        <li><a href="#" data-filter="fisica">Físico</a></li>
+        <li><a href="#" data-filter="creatividad">Creatividad</a></li>
+        <li><a href="#" data-filter="growth">Growth</a></li>
+        <li><a href="#" data-filter="analitica">Analítica</a></li>
+        <li><a href="#" data-filter="premium">Premium</a></li>
+      </ul>
+    </div>
 
-            </div>
-            <ul class="list-unstyled" id="category-filter">
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="all">Todos</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="digital">Digital</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="fisica">Físico</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="creatividad">Creatividad</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="growth">Growth</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="analitica">Analítica</a></li>
-                <li class="pb-3"><a href="#" class="text-decoration-none" data-filter="premium">Premium</a></li>
-            </ul>
+    <!-- Productos -->
+    <div class="col-lg-9">
+      <div class="row" id="product-list">
+
+<!-- Producto 1 -->
+<div class="col-md-6 mb-4 product-card" data-category="digital">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_2.jfif" alt="PRODUCTO_1" class ="product-img">
         </div>
-
-        <!-- Columna de productos -->
-        <div class="col-lg-9">
-            <div class="row" id="product-list">
-
-                <!-- Producto 1 -->
-                <div class="col-md-6 mb-4 product-card" data-category="digital">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                            <img src="ASSETS/PICTURES/IMG_2.jfif" alt="PRODUCTO_1" class ="product-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Paquete Starter Digital</h3>
-                            <p class="card-text">Campaña digital básica perfecta para comenzar tu presencia online. Incluye gestión de redes sociales y anuncios en una plataforma.</p>
-                            <p class="text-success font-weight-bold">599 USD/mes</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=starter" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="col-md-6 mb-4 product-card" data-category="digital">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                             <img src="ASSETS/PICTURES/IMG_6.jfif" alt="PRODUCTO_2" class ="product-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Paquete Pro Digital</h3>
-                            <p class="card-text">Solución completa de marketing digital con campañas en múltiples plataformas, analítica avanzada y optimización.</p>
-                            <p class="text-success font-weight-bold">1299 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=pro" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="col-md-6 mb-4 product-card" data-category="fisica">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                             <img src="ASSETS/PICTURES/IMG_3.jpg" alt="PRODUCTO_3" class ="product-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Campaña Publicitaria Física</h3>
-                            <p class="card-text">Publicidad exterior estratégica en ubicaciones premium. Incluye diseño, producción e instalación de vallas publicitarias.</p>
-                            <p class="text-success font-weight-bold">2499 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=fisica" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 4 -->
-                <div class="col-md-6 mb-4 product-card" data-category="creatividad">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                                <img src="ASSETS/PICTURES/IMG_1.jfif" alt="PRODUCTO_4" class ="product-img">
-
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Estrategia Creativa Premium</h3>
-                            <p class="card-text">Desarrollo completo de identidad de marca, conceptos creativos y material publicitario para todos los canales.</p>
-                            <p class="text-success font-weight-bold">1899 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=creativa" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 5 -->
-                <div class="col-md-6 mb-4 product-card" data-category="growth">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                              <img src="ASSETS/PICTURES/IMG_5.jfif" alt="PRODUCTO_5" class ="product-img">                          
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Growth Marketing Integral</h3>
-                            <p class="card-text">Plan de crecimiento escalable con estrategias de adquisición, retención y optimización de conversión.</p>
-                            <p class="text-success font-weight-bold">1799 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=growth" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 6 -->
-                <div class="col-md-6 mb-4 product-card" data-category="analitica">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                              <img src="ASSETS/PICTURES/IMG_9_ANALISIS.jpg" alt="PRODUCTO_6" class ="product-img">                          
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Analítica y Dashboard Personalizado</h3>
-                            <p class="card-text">Sistema de seguimiento y análisis de datos con dashboard personalizado para tomar decisiones informadas.</p>
-                            <p class="text-success font-weight-bold">899 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=analitica" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 7 -->
-                <div class="col-md-6 mb-4 product-card" data-category="digital">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                              <img src="ASSETS/PICTURES/IMG_8.jpg" alt="PRODUCTO_7" class ="product-img">                          
-
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Segmentación y Targeting Avanzado</h3>
-                            <p class="card-text">Investigación de audiencia y configuración de segmentación precisa para maximizar el ROI de tus campañas.</p>
-                            <p class="text-success font-weight-bold">699 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=segmentacion" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 8 -->
-                <div class="col-md-6 mb-4 product-card" data-category="premium">
-                    <div class="card rounded-0 h-100">
-                        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
-                              <img src="ASSETS/PICTURES/IMG_7.jpg" alt="PRODUCTO_8" class ="product-img">                          
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Paquete Enterprise</h3>
-                            <p class="card-text">Solución completa 360° que integra todos nuestros servicios para marcas que buscan máximo impacto y resultados.</p>
-                            <p class="text-success font-weight-bold">4999 USD</p>
-                            <div class="d-flex gap-1 mt-2 justify-content-start">
-                                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
-                                <a href="productos.html?id=enterprise" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="card-body">
+            <h3 class="card-title">Paquete Starter Digital</h3>
+            <p class="card-text">Campaña digital básica perfecta para comenzar tu presencia online. Incluye gestión de redes sociales y anuncios en una plataforma.</p>
+            <p class="text-success font-weight-bold">599 USD/mes</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=starter" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="starter" 
+                        data-name="Paquete Starter Digital" 
+                        data-price="599" 
+                        data-image="ASSETS/PICTURES/IMG_2.jfif">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
             </div>
         </div>
     </div>
 </div>
-<!-- FIN COMPRAS -->
+
+<!-- Producto 2 -->
+<div class="col-md-6 mb-4 product-card" data-category="digital">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_6.jfif" alt="PRODUCTO_2" class ="product-img">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Paquete Pro Digital</h3>
+            <p class="card-text">Solución completa de marketing digital con campañas en múltiples plataformas, analítica avanzada y optimización.</p>
+            <p class="text-success font-weight-bold">1299 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=pro" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="pro" 
+                        data-name="Paquete Pro Digital" 
+                        data-price="1299" 
+                        data-image="ASSETS/PICTURES/IMG_6.jfif">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 3 -->
+<div class="col-md-6 mb-4 product-card" data-category="fisica">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_3.jpg" alt="PRODUCTO_3" class ="product-img">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Campaña Publicitaria Física</h3>
+            <p class="card-text">Publicidad exterior estratégica en ubicaciones premium. Incluye diseño, producción e instalación de vallas publicitarias.</p>
+            <p class="text-success font-weight-bold">2499 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=fisica" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="fisica" 
+                        data-name="Campaña Publicitaria Física" 
+                        data-price="2499" 
+                        data-image="ASSETS/PICTURES/IMG_3.jpg">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 4 -->
+<div class="col-md-6 mb-4 product-card" data-category="creatividad">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_1.jfif" alt="PRODUCTO_4" class ="product-img">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Estrategia Creativa Premium</h3>
+            <p class="card-text">Desarrollo completo de identidad de marca, conceptos creativos y material publicitario para todos los canales.</p>
+            <p class="text-success font-weight-bold">1899 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=creativa" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="creativa" 
+                        data-name="Estrategia Creativa Premium" 
+                        data-price="1899" 
+                        data-image="ASSETS/PICTURES/IMG_1.jfif">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 5 -->
+<div class="col-md-6 mb-4 product-card" data-category="growth">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_5.jfif" alt="PRODUCTO_5" class ="product-img">                          
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Growth Marketing Integral</h3>
+            <p class="card-text">Plan de crecimiento escalable con estrategias de adquisición, retención y optimización de conversión.</p>
+            <p class="text-success font-weight-bold">1799 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=growth" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="growth" 
+                        data-name="Growth Marketing Integral" 
+                        data-price="1799" 
+                        data-image="ASSETS/PICTURES/IMG_5.jfif">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 6 -->
+<div class="col-md-6 mb-4 product-card" data-category="analitica">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_9_ANALISIS.jpg" alt="PRODUCTO_6" class ="product-img">                          
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Analítica y Dashboard Personalizado</h3>
+            <p class="card-text">Sistema de seguimiento y análisis de datos con dashboard personalizado para tomar decisiones informadas.</p>
+            <p class="text-success font-weight-bold">899 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=analitica" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="analitica" 
+                        data-name="Analítica y Dashboard Personalizado" 
+                        data-price="899" 
+                        data-image="ASSETS/PICTURES/IMG_9_ANALISIS.jpg">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 7 -->
+<div class="col-md-6 mb-4 product-card" data-category="digital">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_8.jpg" alt="PRODUCTO_7" class ="product-img">                          
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Segmentación y Targeting Avanzado</h3>
+            <p class="card-text">Investigación de audiencia y configuración de segmentación precisa para maximizar el ROI de tus campañas.</p>
+            <p class="text-success font-weight-bold">699 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=segmentacion" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="segmentacion" 
+                        data-name="Segmentación y Targeting Avanzado" 
+                        data-price="699" 
+                        data-image="ASSETS/PICTURES/IMG_8.jpg">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 8 -->
+<div class="col-md-6 mb-4 product-card" data-category="premium">
+    <div class="card rounded-0 h-100">
+        <div style="height: 200px; background-color: #f0f0f0;" class="d-flex align-items-center justify-content-center">
+            <img src="ASSETS/PICTURES/IMG_7.jpg" alt="PRODUCTO_8" class ="product-img">                          
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Paquete Enterprise</h3>
+            <p class="card-text">Solución completa 360° que integra todos nuestros servicios para marcas que buscan máximo impacto y resultados.</p>
+            <p class="text-success font-weight-bold">4999 USD</p>
+            <div class="d-flex gap-1 mt-2 justify-content-start">
+                <button class="btn btn-success btn-sm"><i class="far fa-heart"></i></button>
+                <a href="productos.html?id=enterprise" class="btn btn-success btn-sm"><i class="far fa-eye"></i></a>
+                <button class="btn btn-success btn-sm add-to-cart" 
+                        data-id="enterprise" 
+                        data-name="Paquete Enterprise" 
+                        data-price="4999" 
+                        data-image="ASSETS/PICTURES/IMG_7.jpg">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
- 
-    <!-- FOOTER -->
-      <div id="footer"></div>
-    <!-- FIN FOOTER -->
+<!-- Modal Carrito -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Carrito de Compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="cart-items"></div>
+      <div class="modal-footer">
+        <button class="btn btn-success" id="checkout">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  
-    <!-- ARCHIVOS JS -->
+<div id="footer"></div>
 
-      <script src="ASSETS/JS/layout.js"></script>
-      <script src="ASSETS/js/bootstrap.bundle.min.js"></script>
-      <script src="ASSETS/js/jquery-migrate-1.2.1.min.js"></script>
-      <script src="ASSETS/js/jquery-1.11.0.min.js"></script>
-      <script src="ASSETS/js/templatemo.js"></script>
-      <script src="ASSETS/js/custom.js"></script>
-      <script src="ASSETS/JS/FILTER.js"></script>    
+<!-- Scripts -->
+<script src="ASSETS/JS/cart.js"></script>
+<script src="ASSETS/js/bootstrap.bundle.min.js"></script>
+<script src="ASSETS/js/jquery-1.11.0.min.js"></script>
+<script src="ASSETS/JS/FILTER.js"></script>
+<script src="ASSETS/JS/cart.js"></script>
+<script src="ASSETS/JS/layout.js"></script>
+
 </body>
 </html>
