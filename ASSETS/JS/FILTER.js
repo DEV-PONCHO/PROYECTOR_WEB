@@ -1,13 +1,33 @@
- document.querySelectorAll('#category-filter a').forEach(link => {
-        link.addEventListener('click', function(e){
-            e.preventDefault();
-            const filter = this.getAttribute('data-filter');
-            document.querySelectorAll('.product-card').forEach(card => {
-                if(filter === 'all' || card.getAttribute('data-category') === filter){
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
+document.addEventListener("DOMContentLoaded", () => {
+
+  const products = document.querySelectorAll(".product-card");
+  const categoryLinks = document.querySelectorAll("#category-filter a");
+
+  function filterProducts(category) {
+    products.forEach(product => {
+      if (category === "all" || product.dataset.category === category) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
     });
+  }
+
+  // 👉 CLICK en categorías (sidebar)
+  categoryLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const category = link.dataset.filter;
+      filterProducts(category);
+    });
+  });
+
+  // 👉 FILTRO DESDE URL (footer)
+  const params = new URLSearchParams(window.location.search);
+  const categoryFromUrl = params.get("category");
+
+  if (categoryFromUrl) {
+    filterProducts(categoryFromUrl);
+  }
+
+});
