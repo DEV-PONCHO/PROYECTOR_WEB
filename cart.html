@@ -43,12 +43,20 @@
     <!-- JS insertará los productos del carrito -->
   </div>
 
+
   <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
     <h3>Total: <span id="cart-total">0</span> USD</h3>
-    <button id="checkout" class="btn btn-success btn-lg mt-3 mt-md-0">
-      <i class="fas fa-credit-card"></i> Pagar
-    </button>
+    <div class="d-flex gap-2 mt-3 mt-md-0">
+        <button id="empty-cart" class="btn btn-danger btn-lg">
+            <i class="fas fa-trash"></i> Vaciar carrito
+        </button>
+        <button id="checkout" class="btn btn-success btn-lg">
+            <i class="fas fa-credit-card"></i> Pagar
+        </button>
+    </div>
   </div>
+
+
 </div>
 
 <!-- Footer -->
@@ -58,7 +66,6 @@
 <script src="ASSETS/js/bootstrap.bundle.min.js"></script>
 <script src="ASSETS/js/jquery-1.11.0.min.js"></script>
 <script src="ASSETS/JS/cart.js"></script>
-<script src="ASSETS/JS/cart-page.js"></script>
 <script src="ASSETS/JS/layout.js"></script>
 </body>
 </html>
