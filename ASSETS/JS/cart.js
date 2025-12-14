@@ -1,24 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cartContainer = document.getElementById("cart-items");
-    const cartTotalEl = document.getElementById("cart-total");
-    const emptyCartBtn = document.getElementById("empty-cart");
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let visitas = parseInt(localStorage.getItem("contadorVisitas")) || 0;
 
-    // Función para actualizar contador de items en el encabezado
-    function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-        const count = cart.reduce((acc, item) => acc + item.quantity, 0);
-        const cartCount = document.getElementById("cart-count");
-        if(cartCount) cartCount.textContent = count;
-    }
+    visitas++;
+    localStorage.setItem("contadorVisitas", visitas);
 
-    // Guardar carrito en localStorage
-    function saveCart(cart) {
+    // Observador para esperar a que los elementos aparezcan en el DOM
+    const observer = new MutationObserver(() => {
+        const visitasBadge = document.getElementById("contador-visitas");
+        const cartBadge = document.getElementById("cart-count-badge");
+
+        if (visitasBadge && cartBadge) {
+            visitasBadge.textContent = visitas;
+            cartBadge.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+            observer.disconnect(); // deja de observar
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // --- FUNCIONES DEL CARRITO ---
+    function saveCart() {
         localStorage.setItem("cartItems", JSON.stringify(cart));
     }
 
-    // Renderizar carrito
     function renderCart() {
-        const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartContainer = document.getElementById("cart-items");
+        const cartTotalEl = document.getElementById("cart-total");
+        if (!cartContainer) return;
+
         cartContainer.innerHTML = "";
         let total = 0;
 
@@ -44,48 +54,49 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // Eventos de botones
             div.querySelector(".increase").addEventListener("click", () => {
                 item.quantity += 1;
-                saveCart(cart);
+                saveCart();
                 renderCart();
             });
 
             div.querySelector(".decrease").addEventListener("click", () => {
-                if(item.quantity > 1) {
+                if (item.quantity > 1) {
                     item.quantity -= 1;
-                    saveCart(cart);
+                    saveCart();
                     renderCart();
                 }
             });
 
             div.querySelector(".remove").addEventListener("click", () => {
-                const index = cart.findIndex(p => p.id === item.id);
-                if(index > -1) {
-                    cart.splice(index, 1);
-                    saveCart(cart);
-                    renderCart();
-                }
+                cart = cart.filter(p => p.id !== item.id);
+                saveCart();
+                renderCart();
             });
 
             cartContainer.appendChild(div);
         });
 
-        cartTotalEl.textContent = total.toFixed(2);
-        updateCartCount();
+        if (cartTotalEl) cartTotalEl.textContent = total.toFixed(2);
+
+        // Actualizar badge carrito si ya está en DOM
+        const cartBadge = document.getElementById("cart-count-badge");
+        if (cartBadge) cartBadge.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
     }
 
     // Vaciar carrito
-    if(emptyCartBtn){
+    const emptyCartBtn = document.getElementById("empty-cart");
+    if (emptyCartBtn) {
         emptyCartBtn.addEventListener("click", () => {
-            if(confirm("¿Estás seguro que deseas vaciar todo el carrito?")){
-                localStorage.removeItem("cartItems");
+            if (confirm("¿Estás seguro que deseas vaciar todo el carrito?")) {
+                cart = [];
+                saveCart();
                 renderCart();
             }
         });
     }
 
-    // Botones "Agregar al carrito" (productos y compras)
+    // Botones agregar productos
     const cartButtons = document.querySelectorAll(".add-to-cart, #add-to-cart, .btn-cart");
     cartButtons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -97,19 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 quantity: 1
             };
 
-            let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
             const existing = cart.find(p => p.id === product.id);
-            if(existing){
+            if (existing) {
                 existing.quantity += 1;
             } else {
                 cart.push(product);
             }
-            saveCart(cart);
+
+            saveCart();
             renderCart();
         });
     });
 
     // Inicializar carrito
     renderCart();
-    updateCartCount();
 });
