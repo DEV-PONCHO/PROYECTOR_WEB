@@ -8,22 +8,27 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="ASSETS/css/custom.css">
 <style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1 0 auto;
+  }
   .cart-item {
     border: 1px solid #dee2e6;
     border-radius: 8px;
-    margin-bottom: 15px;
     padding: 15px;
     background-color: #fff;
+    display: flex;
+    align-items: center;
   }
   .cart-item img {
-    max-width: 100%;
-    height: auto;
-  }
-  .cart-item .item-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    max-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
   }
   .quantity-controls button {
     min-width: 32px;
@@ -35,35 +40,30 @@
 <!-- Header -->
 <div id="header"></div>
 
-<!-- Contenedor Carrito -->
-<div class="container py-5">
+<main class="container py-5">
   <h1 class="mb-4">Tu Carrito</h1>
 
   <div id="cart-items" class="row">
     <!-- JS insertará los productos del carrito -->
   </div>
 
-
   <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
     <h3>Total: <span id="cart-total">0</span> USD</h3>
     <div class="d-flex gap-2 mt-3 mt-md-0">
-        <button id="empty-cart" class="btn btn-danger btn-lg">
-            <i class="fas fa-trash"></i> Vaciar carrito
-        </button>
-        <button id="checkout" class="btn btn-success btn-lg">
-            <i class="fas fa-credit-card"></i> Pagar
-        </button>
+      <button id="empty-cart" class="btn btn-danger btn-lg">
+        <i class="fas fa-trash"></i> Vaciar carrito
+      </button>
+      <button id="checkout" class="btn btn-success btn-lg">
+        <i class="fas fa-credit-card"></i> Pagar
+      </button>
     </div>
   </div>
-
-
-</div>
+</main>
 
 <!-- Footer -->
-<div id="footer"></div>
+<div id="footer" class="mt-auto"></div>
 
 <!-- Scripts -->
-
 <script src="ASSETS/js/bootstrap.bundle.min.js"></script>
 <script src="ASSETS/js/jquery-1.11.0.min.js"></script>
 <script src="ASSETS/JS/cart.js"></script>
@@ -73,5 +73,3 @@
 
 </body>
 </html>
-
-
